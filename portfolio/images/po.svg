@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="242" height="242" viewBox="0 0 242 242">
+  <g id="_9" data-name="9" transform="translate(-5300 -2280)">
+    <rect id="長方形_69" data-name="長方形 69" width="242" height="242" transform="translate(5300 2280)" fill="none"/>
+    <g id="グループ_37" data-name="グループ 37" transform="translate(4977.378 2090.139)">
+      <g id="グループ_4" data-name="グループ 4" transform="translate(353.621 235.987)">
+        <g id="グループ_1" data-name="グループ 1" transform="translate(0 22.133)">
+          <path id="パス_1" data-name="パス 1" d="M475.542,272.344v-23.22l-29.5,23.22Z" transform="translate(-326.726 -219.963)" fill="#fff100"/>
+          <path id="パス_2" data-name="パス 2" d="M406.172,276.65l.2-.159,25.307-19.923,7.1-5.586h-7.1v-27h-25.51v27h-60.4v25.509h60.4Z" transform="translate(-343.267 -223.986)" fill="#fff100"/>
+          <path id="パス_3" data-name="パス 3" d="M397.619,357.253h25.509V289.941l-25.509,20.082Z" transform="translate(-334.714 -213.614)" fill="#fff100"/>
+          <path id="パス_4" data-name="パス 4" d="M492.919,246.5,477.14,226.533l-30.522,23.93L432.036,261.9,414.215,275.87l-7.689,6.028-62.9,49.32L359.4,351.18l47.125-36.949,25.51-20,23.419-18.362,32.4-25.406Z" transform="translate(-343.622 -223.566)" fill="#fff100"/>
+        </g>
+        <g id="グループ_2" data-name="グループ 2" transform="translate(141.033)">
+          <circle id="楕円形_1" data-name="楕円形 1" cx="19.483" cy="19.483" r="19.483" fill="#fff100"/>
+        </g>
+        <g id="グループ_3" data-name="グループ 3" transform="translate(105.538 96.833)">
+          <rect id="長方形_2" data-name="長方形 2" width="47.074" height="25.509" transform="translate(20.044 0) rotate(51.789)" fill="#fff100"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
