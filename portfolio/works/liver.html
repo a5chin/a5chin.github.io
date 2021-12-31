@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>a5chin's portfolio</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="../css/animate.css">		
+		<link rel="stylesheet" href="../css/icomoon.css">
+		<link rel="stylesheet" href="../css/style.css">
+
+		<!-- Icon -->
+		<link rel="shortcut icon" type="image/svg+xml" href="../images/po.svg">
+		<link rel="icon" type="image/svg+xml" href="../images/po.svg" />
+
+		<!-- Chart.js -->
+		<script src="../js/chart.js"></script>
+		<script src="../js/chartjs-plugin-colorschemes.min.js"></script>
+	</head>
+	<body>
+
+		<!-- Star Nav Section -->
+		<nav id="navbar-2" class="navbar-2">
+			<ul class="nav-menu">
+				<li>
+				<a data-scroll="home" href="../index.html#home" class="dot">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="career" href="../index.html#career" class="dot">
+					<span>About</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="work" href="../index.html#work" class="dot active">
+					<span>Works</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="who" href="../index.html#who" class="dot">
+					<span>Testimony</span>
+				</a>
+				</li>
+				<li>
+				<a href="../index.html#contact" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- End Nav Section -->
+
+		<!-- Start Home Section -->
+		<section id="home" class="hero-wrap js-fullheight" style="background-image: url(../images/livercancer_caraousel.png);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+					<div class="col-lg-7 ftco-animate d-flex align-items-center">
+						<div class="text text-center">
+							<h1 class="bread" style="font-size: 3rem;">Detection of liver cancer</h1>
+							<p class="breadcrumbs"><span class="mr-2"><a href="../index.html">Home</a></span> <span>About me</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Home Section -->
+
+		<!-- Start Main Section -->
+		<section class="ftco-section work-single ftco-no-pt ftco-no-pb">
+			<div class="container">
+				<h2 class="text-center ftco-animate" style="padding-top: 3rem;">データセットについて</h2>
+				<div class="row mx-auto py-5 ftco-animate">
+					<div class="col-md-6" style="background-color: silver;">
+						<div class="row mx-auto">
+							<canvas id="dataset"></canvas>
+							<script>
+								var ctx = document.getElementById('dataset').getContext('2d');
+								var chart = new Chart(ctx, {
+									type: 'bar',
+									data: {
+										labels: ['cyst', 'hemangioma', 'meta', 'hcc'],
+										datasets: [
+											{
+												label: 'male',
+												data: [13812, 12798, 5826, 8910],
+												backgroundColor: ['#5b9bd5']
+											},
+											{
+												label: 'female',
+												data: [16460, 16972, 4420, 4705],
+												backgroundColor: ['#ed7d31']
+											}
+										]
+									},
+							
+									options: {
+										responsive: true,
+										plugins: {
+											legend: {
+												position: 'top',
+											},
+											title: {
+												display: true,
+												text: '実験で使用するデータセット'
+											},
+										},
+										scales: {
+											y: {
+												ticks: {
+													// Include a dollar sign in the ticks
+													callback: function(value, index, values) {
+														return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '枚';
+													}
+												},
+												grid: {
+													color: 'grey'
+												}
+											},
+											x: {
+												grid: {
+													color: 'grey'
+												}
+											}
+										}
+									}
+								});
+							</script>
+						</div>
+						<div class="row mx-auto">
+							<canvas id="age" style="height: 15rem;"></canvas>
+							<script>
+								var ctx = document.getElementById('age').getContext('2d');
+								var chart = new Chart(ctx, {
+									type: 'line',
+									data: {
+										labels: [...Array(11)].map((_, i) => i * 10),
+										datasets: [
+											{
+												label: 'cyst',
+												data: [0, 0.0202, 0.0168, 0.3728, 4.1275, 14.0180, 24.3518, 31.4985, 21.7591, 3.7782, 0.0571],
+												borderColor: '#375e97',
+												tension: 0.5,
+												borderWidth: 4,
+												radius: 0,
+											},
+											{
+												label: 'hemangioma',
+												data: [0.0544, 0.0476, 0.2959, 2.5474, 11.9001, 21.3992, 27.4122, 25.6538, 9.8391, 0.8332, 0.0170],
+												borderColor: '#fb6542',
+												tension: 0.5,
+												borderWidth: 4,
+												radius: 0,
+											},
+											{
+												label: 'meta',
+												data: [0.0591, 0.6892, 0.0985, 0.8467, 3.6625, 11.8834, 22.6346, 33.9372, 23.0974, 2.9635, 0.1280],
+												borderColor: '#ffbb00',
+												tension: 0.5,
+												borderWidth: 4,
+												radius: 0,
+											},
+											{
+												label: 'hcc',
+												data: [0, 0.1064, 0.0327, 0.4011, 1.4571, 3.5200, 12.3936, 37.9175, 36.1002, 8.0714, 0],
+												borderColor: '#3f681c',
+												tension: 0.5,
+												borderWidth: 4,
+												radius: 0,
+											},
+										]
+									},
+									options: {
+										responsive: true,
+										interaction: {
+											intersect: false
+										},
+										plugins: {
+	
+											title: {
+												display: true,
+												text: '診断名毎における年齢の相対分布'
+											},
+										},
+										scales: {
+											y: {
+												ticks: {
+													callback: function(value, index, values) {
+														return value.toString() + '%';
+													}
+												},
+												grid: {
+													color: 'grey'
+												}
+											},
+											x: {
+												type: 'linear',
+												grid: {
+													color: 'grey'
+												}
+											}
+										}
+									},
+								});
+							</script>
+						</div>
+					</div>
+					<div class="col-md-6 my-auto py-5 text pl-md-5">
+						<ul>
+							<li>
+								cyst (単純嚢胞)
+								<ul>
+									<li>女性の方が罹患しやすい</li>
+									<li>最もデータ数が少ないクラス</li>
+								</ul>
+							</li>
+							<li>
+								hemangioma (血管腫)
+								<ul>
+									<li>女性の方が罹患しやすい</li>
+									<li>偏差が最も大きい</li>
+								</ul>
+							</li>
+							<li>
+								meta (転移性肝癌)
+								<ul>
+									<li>男性の方が罹患しやすい</li>
+									<li>最もデータ数が少ないクラス</li>
+								</ul>
+							</li>
+							<li>
+								hcc (肝細胞癌)
+								<ul>
+									<li>男性の方が罹患しやすい</li>
+									<li>比較的高齢者が患うという傾向あり</li>
+									<li>偏差が最も小さい</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mx-auto pt-5 ftco-animate">
+					<div class="col-3">
+						<h3 class="text-center">Cyst</h3>
+					</div>
+					<div class="col-3">
+						<h3 class="text-center">Hemangioma</h3>
+					</div>
+					<div class="col-3">
+						<h3 class="text-center">Meta</h3>
+					</div>
+					<div class="col-3">
+						<h3 class="text-center">Hcc</h3>
+					</div>
+				</div>
+				<div class="row mx-auto pb-5 ftco-animate">
+					<div class="col-3">
+						<img src="../images/cyst.png" alt="cyst.png" width="100%">
+					</div>
+					<div class="col-3">
+						<img src="../images/hemangioma.png" alt="hemangioma.png" width="100%">
+					</div>
+					<div class="col-3">
+						<img src="../images/meta.png" alt="meta.png" width="100%">
+					</div>
+					<div class="col-3">
+						<img src="../images/hcc.png" alt="hcc.png" width="100%">
+					</div>
+				</div>
+				<div class="row mx-auto pb-5 ftco-animate">
+					<div class="col-3">
+						<ul>
+							<li>液体が貯留されている状態</li>
+							<li>症状がでないことが多い</li>
+							<li>大きな腫瘍になって発見される事が多い</li>
+							<li>転移することは少ない</li>
+						</ul>
+					</div>
+					<div class="col-3">
+						<ul>
+							<li>良性腫瘍の中で最も多い</li>
+							<li>女性ホルモンが原因と言われている</li>
+							<li>血管が無数に絡み合うことによって出来た血管の塊</li>
+							<li>血流が遅い</li>
+							<li>他の臓器に浸潤したり転移することは無い</li>
+						</ul>
+					</div>
+					<div class="col-3">
+						<ul>
+							<li>消化器癌から転移する割合が多い</li>
+							<li>類似した腫瘤が多発してみられる事が多い</li>
+						</ul>
+					</div>
+					<div class="col-3">
+						<ul>
+							<li>悪性腫瘍の中で最も多いと言われている</li>
+							<li>約90％がウイルス感染症が原因</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- EndMain Section -->
+
+		<!-- Start Footer Section -->
+		<footer class="ftco-footer py-5">
+			<div class="container text-center">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p>&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by a5chin</p>
+						<ul class="ftco-footer-social p-0">
+							<li class="ftco-animate"><a href="https://a5chin.github.io/portfolio/"><span class="icon-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="https://github.com/a5chin"><span class="icon-github"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End Footer Section -->
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="../js/jquery.waypoints.min.js"></script>
+		<script src="../js/jquery.stellar.min.js"></script>
+		<script src="../js/owl.carousel.min.js"></script>
+		<script src="../js/aos.js"></script>
+		<script src="../js/scrollax.min.js"></script>
+		<script src="../js/main.js"></script>
+	</body>
+</html>
